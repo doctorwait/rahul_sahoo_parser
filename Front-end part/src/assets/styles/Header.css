@@ -1,0 +1,85 @@
+.header {
+  margin: 0;
+  padding: 10px 0;
+  background-color: var(--color_accent);
+  width: 100%;
+}
+
+.header__content-wrapper {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1140px;
+  display: flex;
+  align-items: canter;
+  justify-content: space-between;
+}
+
+.header__logo {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header__logo-icon {
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.header__logo-text {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header__buttons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.header__button {
+  margin: 0;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 0;
+  color: var(--color_text_button);
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}
+
+.header__button_type_login {
+  background-color: rgb(65, 156, 238);
+}
+
+.header__button_type_login:hover {
+  background-color: rgb(43, 138, 235);
+}
+
+.header__button_type_register {
+  background-color: rgb(41, 192, 129);
+}
+
+.header__button_type_register:hover {
+  background-color: rgb(32, 151, 102);
+}
+
+.header__button-icon {
+  margin: 0 5px 0 0;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  vertical-align: text-top;
+}

@@ -1,0 +1,127 @@
+.footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.footer__contacts-wrapper {
+  margin: 0;
+  padding: 24px 0;
+  width: 100%;
+  background-color: var(--color_accent);
+}
+
+.footer__contacts {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__contacts-title {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_button);
+  font-size: 15px;
+}
+
+.footer__contacts-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: canter;
+  gap: 10px;
+}
+
+.footer__contacts-link-icon {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.footer__info {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__info-column {
+  margin: 0;
+  padding: 0;
+  max-width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer__info-column-title {
+  margin: 0;
+  padding: 0 0 8px;
+  width: fit-content;
+  color: var(--color_text_main);
+  font-size: 15px;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(0,0,0,.1);
+}
+
+.footer__info-column-text {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_main);
+  font-size: 14px;
+}
+
+.footer__info-column-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.footer__info-column-link {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_link);
+  text-decoration: none;
+}
+
+.footer__info-column-link:hover {
+  cursor: pointer;
+  color: var(--color_accent);
+  text-decoration: underline;
+}
+
+.footer__info-column-link-icon {
+  margin: 0 5px 0 0;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  vertical-align: text-top;
+}
+
+.footer__copyright {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1140px;
+}
+
+.footer__copyright-text {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_main);
+  font-size: 16px;
+}
