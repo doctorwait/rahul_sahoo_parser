@@ -2,5 +2,10 @@
   margin: 0 auto;
   padding: 30px 15px;
   max-width: 1140px;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 2fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  grid-template-areas:
+    "form video";
 }
