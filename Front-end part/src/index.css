@@ -5,12 +5,16 @@ body {
   --color_background: rgb(235, 235, 235);
   --color_accent: rgb(58, 72, 123);
   --color_block: rgb(255, 255, 255);
+  --color_border: #d2d2dc;
 
   /* text colors */
   --color_text_fade: rgb(104, 104, 104);
   --color_text_main: rgb(0, 0, 0);
   --color_text_button: rgb(255, 255, 255);
   --color_text_link: rgb(0, 123, 255);
+
+  /* text props */
+  --text_font: Arial, sans-serif;
 
   margin: 0;
   background-color: var(--color_background);

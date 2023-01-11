@@ -1,0 +1,31 @@
+.logo {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo__icon {
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.logo__text {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--text_font);
+}
+
+.logo__text_color_black {
+  color: var(--color_text_main);
+}
+
+.logo__text_color_white {
+  color: var(--color_text_button);
+}
