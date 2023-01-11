@@ -13,6 +13,7 @@ import { MAIN_PAGE_ROUTE } from '../utils/constants';
 function App() {
   const [registerPopupState, setRegisterPopupState] = useState(false);
   const [loginPopupState, setLoginPopupState] = useState(false);
+  const [currentUser, setCurrentUser] = useState({isLoggedIn: false, data: {}});
 
   function closeAllPopups() {
     setRegisterPopupState(false);
@@ -27,11 +28,27 @@ function App() {
     setRegisterPopupState(true);
   }
 
+  function setUserData(data) {
+    setCurrentUser(() => ({
+      isLoggedIn: true,
+      data
+    }))
+  }
+
+  function clearUserData() {
+    setCurrentUser({
+      isLoggedIn: false,
+      data: {}
+    })
+  }
+
   return (
     <div className="App">
       <Header
         openLoginPopup={openLoginPopup}
         openRegisterPopup={openRegisterPopup}
+        currentUser={currentUser}
+        clearUserData={clearUserData}
       />
       <Navigation />
       <Switch>
@@ -49,6 +66,7 @@ function App() {
         {loginPopupState &&
           <LoginPopup
             handleClose={closeAllPopups}
+            setUserData={setUserData}
           />
         }
       </Portal>

@@ -41,5 +41,9 @@
 .form-input__input::placeholder {
   color: rgb(0, 0, 0, .5);
   font-family: var(--text_font);
+  font-size: 12px;
+}
+
+.form-input__input_place_popup::placeholder {
   font-size: 14px;
 }

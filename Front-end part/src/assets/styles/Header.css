@@ -53,10 +53,36 @@
   background-color: rgb(32, 151, 102);
 }
 
+.header__button_type_logout {
+  background-color: rgb(65, 156, 238);
+}
+
+.header__button_type_logout:hover {
+  background-color: rgb(43, 138, 235);
+}
+
 .header__button-icon {
   margin: 0 5px 0 0;
   padding: 0;
   width: 14px;
   height: 14px;
   vertical-align: text-top;
+}
+
+.header__current-user {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__user-name {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_button);
+  font-family: var(--text_font);
+  font-size: 18px;
+  font-weight: 500;
 }
