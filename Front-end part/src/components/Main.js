@@ -1,12 +1,15 @@
 import '../assets/styles/Main.css';
+import Front from './Front';
 import SearchForm from './SearchForm';
-import Video from './Video';
 
 function Main() {
   return (
     <main className="main">
+      <Front />
       <SearchForm />
-      <Video />
+      <p className="main__subtitle" >
+        This tool is used by million web designer and SEO agency to scale there business.
+      </p>
     </main>
   );
 }

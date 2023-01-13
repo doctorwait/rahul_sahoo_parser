@@ -2,7 +2,7 @@
   margin: 0;
   padding: 30px 40px;
   box-sizing: border-box;
-  border: 1px solid var(--color_border);
+  border: 0;
   background-color: var(--color_block);
   display: flex;
   flex-direction: column;
@@ -45,12 +45,6 @@
   padding: 0;
   background-color: transparent;
   border: 0;
-  width: 20px;
-  height: 20px;
-  background-image: url(../images/close_icon_black.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -58,4 +52,10 @@
 
 .popup-form__close-button:hover {
   cursor: pointer;
+}
+
+.popup-form__close-button-icon {
+  color: var(--color_text_main);
+  width: 25px;
+  height: 25px;
 }

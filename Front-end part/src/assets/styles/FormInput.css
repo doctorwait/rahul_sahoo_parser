@@ -25,12 +25,19 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #d2d2dc;
-  border-radius: 5px;
+  border-radius: 3px;
   font-family: var(--text_font);
+  color: var(--color_text_main);
 }
 
 .form-input__input_place_popup {
   padding: 15px;
+  font-size: 16px;
+}
+
+.form-input__input_place_main {
+  padding: 15px;
+  font-size: 16px;
 }
 
 .form-input__input:focus {
@@ -45,5 +52,9 @@
 }
 
 .form-input__input_place_popup::placeholder {
+  font-size: 14px;
+}
+
+.form-input__input_place_main::placeholder {
   font-size: 14px;
 }

@@ -1,16 +1,18 @@
 import '../assets/styles/FormInput.css';
 
-function FormInput({ value, handleChange, label, id, type, name, placeholder, place = false }) {
+function FormInput({ value, handleChange, label = false, id, type, name, placeholder, place = false }) {
   return (
     <div className="form-input" >
-      <label
-        htmlFor="keyword-input"
-        className={`form-input__label ${place === "popup" && "form-input__label_place_popup"}`}
-      >
-        {label}
-      </label>
+      {label &&
+        <label
+          htmlFor="keyword-input"
+          className={`form-input__label ${place && "form-input__label_place_" + place}`}
+        >
+          {label}
+        </label>
+      }
       <input
-        className={`form-input__input ${place === "popup" && "form-input__input_place_popup"}`}
+        className={`form-input__input ${place && "form-input__input_place_" + place}`}
         id={id}
         type={type}
         name={name}

@@ -1,3 +1,5 @@
+import { IconContext } from "react-icons";
+import { IoMdClose } from 'react-icons/io';
 import '../assets/styles/PopupWithForm.css';
 import PopupWrapper from './PopupWrapper';
 import Logo from './Logo';
@@ -27,7 +29,11 @@ function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
           className="popup-form__close-button"
           type="reset"
           onClick={handleClose}
-        />
+        >
+          <IconContext.Provider value={{ className: "popup-form__close-button-icon" }}>
+            <IoMdClose />
+          </IconContext.Provider>
+        </button>
       </form>
     </PopupWrapper>
   );

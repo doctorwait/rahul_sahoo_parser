@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import '../assets/styles/App.css';
 import Header from './Header';
-import Navigation from './Navigation';
 import Main from './Main';
 import Footer from './Footer';
 import Portal from './Portal';
@@ -50,7 +49,6 @@ function App() {
         currentUser={currentUser}
         clearUserData={clearUserData}
       />
-      <Navigation />
       <Switch>
         <Route exact path={MAIN_PAGE_ROUTE} >
           <Main />

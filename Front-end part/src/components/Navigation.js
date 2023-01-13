@@ -1,6 +1,7 @@
+import { AiOutlineHome, AiFillHdd } from 'react-icons/ai';
+import { BiBuilding, BiClipboard } from 'react-icons/bi';
 import '../assets/styles/Navigation.css';
 import NavigationLink from './NavigationLink';
-import icon from '../assets/images/navigation-icon.svg';
 
 function Navigation() {
   return (
@@ -8,37 +9,30 @@ function Navigation() {
       <ul className="navigation__links-list">
         <li>
           <NavigationLink
-            img={icon}
+            Icon={AiOutlineHome}
             link="#"
             title="Home"
           />
         </li>
         <li>
           <NavigationLink
-            img={icon}
+            Icon={BiClipboard}
             link="#"
-            title="Search"
+            title="Products"
           />
         </li>
         <li>
           <NavigationLink
-            img={icon}
+            Icon={AiFillHdd}
             link="#"
-            title="Plans"
+            title="Resources"
           />
         </li>
         <li>
           <NavigationLink
-            img={icon}
+            Icon={BiBuilding}
             link="#"
-            title="Filters"
-          />
-        </li>
-        <li>
-          <NavigationLink
-            img={icon}
-            link="#"
-            title="FAQ"
+            title="Company"
           />
         </li>
       </ul>

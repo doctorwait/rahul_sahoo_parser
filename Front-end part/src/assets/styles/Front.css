@@ -1,0 +1,28 @@
+.front {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  grid-area: "front";
+}
+
+.front__title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--color_text_main);
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.front__subtitle {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--color_text_fade);
+  font-size: 20px;
+  font-weight: 500;
+}

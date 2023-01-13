@@ -1,6 +1,8 @@
+import { IconContext } from 'react-icons';
+import { MdFacebook } from 'react-icons/md';
+import { FaLink } from 'react-icons/fa';
+import { IoLogoTwitter, IoLogoLinkedin, IoIosLink } from 'react-icons/io';
 import '../assets/styles/Footer.css';
-import icon from '../assets/images/navigation-icon-white.svg';
-import iconBlack from '../assets/images/navigation-icon-black.svg';
 
 function Footer() {
   return (
@@ -13,17 +15,23 @@ function Footer() {
           <ul className="footer__contacts-links">
             <li>
               <a href="#" className="footer__contacts-link" >
-                <img src={icon} alt="link icon" className="footer__contacts-link-icon" />
+                <IconContext.Provider value={{ className: 'footer__contacts-link-icon' }}>
+                  <MdFacebook />
+                </IconContext.Provider>
               </a>
             </li>
             <li>
               <a href="#" className="footer__contacts-link" >
-                <img src={icon} alt="link icon" className="footer__contacts-link-icon" />
+                <IconContext.Provider value={{ className: 'footer__contacts-link-icon' }}>
+                  <IoLogoTwitter />
+                </IconContext.Provider>
               </a>
             </li>
             <li>
               <a href="#" className="footer__contacts-link" >
-                <img src={icon} alt="link icon" className="footer__contacts-link-icon" />
+                <IconContext.Provider value={{ className: 'footer__contacts-link-icon' }}>
+                  <IoLogoLinkedin />
+                </IconContext.Provider>
               </a>
             </li>
           </ul>
@@ -103,19 +111,25 @@ function Footer() {
           <ul className="footer__info-column-links" >
             <li>
               <a href="#" className="footer__info-column-link" >
-                <img src={iconBlack} alt="link icon" className="footer__info-column-link-icon" />
+                <IconContext.Provider value={{ className: "footer__info-column-link-icon" }}>
+                  <FaLink />
+                </IconContext.Provider>
                 Link
               </a>
             </li>
             <li>
               <a href="#" className="footer__info-column-link" >
-                <img src={iconBlack} alt="link icon" className="footer__info-column-link-icon" />
+                <IconContext.Provider value={{ className: "footer__info-column-link-icon" }}>
+                  <FaLink />
+                </IconContext.Provider>
                 Link
               </a>
             </li>
             <li>
               <a href="#" className="footer__info-column-link" >
-                <img src={iconBlack} alt="link icon" className="footer__info-column-link-icon" />
+                <IconContext.Provider value={{ className: "footer__info-column-link-icon" }}>
+                  <FaLink />
+                </IconContext.Provider>
                 Link
               </a>
             </li>

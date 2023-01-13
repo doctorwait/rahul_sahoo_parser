@@ -1,8 +1,10 @@
 .header {
   margin: 0;
-  padding: 10px 0;
+  padding: 12.5px 0;
   background-color: var(--color_accent);
   width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .header__content-wrapper {
@@ -12,6 +14,22 @@
   display: flex;
   align-items: canter;
   justify-content: space-between;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1140px) {
+  .header__content-wrapper {
+    padding: 0 15px;
+  }
+}
+
+.header__menu-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 85%;
 }
 
 .header__buttons {
@@ -25,12 +43,14 @@
 
 .header__button {
   margin: 0;
-  padding: 12px 24px;
+  padding: 0 15px;
+  height: 40px;
   background-color: transparent;
   border: 0;
   color: var(--color_text_button);
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 3px;
+  font-weight: 500;
 }
 
 .header__button:hover {
@@ -38,51 +58,25 @@
 }
 
 .header__button_type_login {
-  background-color: rgb(65, 156, 238);
+  background-color: transparent;
 }
 
 .header__button_type_login:hover {
-  background-color: rgb(43, 138, 235);
+  background-color: rgb(62, 95, 216);
 }
 
 .header__button_type_register {
-  background-color: rgb(41, 192, 129);
-}
-
-.header__button_type_register:hover {
   background-color: rgb(32, 151, 102);
 }
 
-.header__button_type_logout {
-  background-color: rgb(65, 156, 238);
-}
-
-.header__button_type_logout:hover {
-  background-color: rgb(43, 138, 235);
+.header__button_type_register:hover {
+  background-color: #008D5B;
 }
 
 .header__button-icon {
   margin: 0 5px 0 0;
   padding: 0;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   vertical-align: text-top;
-}
-
-.header__current-user {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.header__user-name {
-  margin: 0;
-  padding: 0;
-  color: var(--color_text_button);
-  font-family: var(--text_font);
-  font-size: 18px;
-  font-weight: 500;
 }

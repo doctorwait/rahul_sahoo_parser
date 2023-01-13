@@ -2,14 +2,15 @@ body {
   /* css variables */
 
   /* background colors */
-  --color_background: rgb(235, 235, 235);
-  --color_accent: rgb(58, 72, 123);
+  --color_background: #F6F8F9;
+  --color_accent: #4169E1;
   --color_block: rgb(255, 255, 255);
   --color_border: #d2d2dc;
+  --color_button: rgb(243, 67, 41);
 
   /* text colors */
-  --color_text_fade: rgb(104, 104, 104);
-  --color_text_main: rgb(0, 0, 0);
+  --color_text_fade: rgb(112, 120, 128);
+  --color_text_main: #454748;
   --color_text_button: rgb(255, 255, 255);
   --color_text_link: rgb(0, 123, 255);
 

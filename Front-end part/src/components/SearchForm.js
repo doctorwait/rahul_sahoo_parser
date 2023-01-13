@@ -1,6 +1,7 @@
+import { IconContext } from "react-icons";
+import { AiOutlineSearch } from 'react-icons/ai';
 import useCollectInputsData from '../hooks/useCollectInputsData';
 import '../assets/styles/SearchForm.css';
-import icon from '../assets/images/navigation-icon-white.svg';
 import FormInput from './FormInput';
 
 function SearchForm() {
@@ -17,39 +18,38 @@ function SearchForm() {
       onSubmit={handleSubmit}
       className="search-form"
     >
+      <h2 className="search-form__title">
+        Built your Custom List
+      </h2>
       <fieldset className="search-form__fieldset" >
-        <legend className="search-form__legend">
-          Search For Leads
-        </legend>
-        <p className="search-form__description" >
-          Type keyword and choose city to search for leads.
-        </p>
         <FormInput
           id="keyword-input"
           type="text"
           name="keyword"
           placeholder="Enter a keyword"
-          label="Enter a Keyword"
           value={inputsValues.keyword}
           handleChange={handleChange}
+          place="main"
         />
         <FormInput
           id="city-input"
           type="text"
           name="city"
           placeholder="Enter a city"
-          label="Enter a City"
           value={inputsValues.city}
           handleChange={handleChange}
+          place="main"
         />
-        <button
-            className="search-form__button"
-            type="submit"
-          >
-            <img src={icon} alt="button icon" className="search-form__button-icon" />
-            Search
-          </button>
       </fieldset>
+      <button
+        className="search-form__button"
+        type="submit"
+      >
+        <IconContext.Provider value={{ className: "search-form__button-icon" }}>
+          <AiOutlineSearch />
+        </IconContext.Provider>
+        Search
+      </button>
     </form>
   );
 }
