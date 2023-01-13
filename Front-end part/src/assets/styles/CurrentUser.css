@@ -77,6 +77,7 @@
   color: var(--color_text_fade);
   font-size: 14px;
   font-family: var(--text_font);
+  text-align: left;
 }
 
 .current-user__menu-button:hover {
