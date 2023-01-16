@@ -1,14 +1,16 @@
 import useCollectInputsData from '../hooks/useCollectInputsData';
+import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import PopupWithForm from './PopupWithForm';
 import FormInput from './FormInput';
 
-function LoginPopup({ handleClose, setUserData }) {
+function LoginPopup({ handleClose }) {
   const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
+  const { setCurrentUser } = useCurrentUserContext();
 
   function handleSubmit(evt) {
     evt.preventDefault();
 
-    setUserData(inputsValues)
+    setCurrentUser(inputsValues);
 
     handleClose();
     clearInputsValues();

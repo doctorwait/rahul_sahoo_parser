@@ -1,3 +1,4 @@
+import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import { IconContext } from "react-icons";
 import { MdOutlineLogin, MdCreate } from 'react-icons/md';
 import '../assets/styles/Header.css';
@@ -5,14 +6,16 @@ import Navigation from './Navigation';
 import Logo from './Logo';
 import CurrentUser from './CurrentUser';
 
-function Header({ openLoginPopup, openRegisterPopup, currentUser, clearUserData }) {
+function Header({ openLoginPopup, openRegisterPopup }) {
+  const { userIsLogged } = useCurrentUserContext();
+
   return (
     <header className="header">
       <div className="header__content-wrapper">
         <Logo />
         <div className="header__menu-wrapper">
           <Navigation />
-          {!currentUser.isLoggedIn &&
+          {!userIsLogged &&
             <ul className="header__buttons">
               <li>
                 <button
@@ -38,11 +41,8 @@ function Header({ openLoginPopup, openRegisterPopup, currentUser, clearUserData 
               </li>
             </ul>
           }
-          {currentUser.isLoggedIn &&
-            <CurrentUser
-              userData={currentUser.data}
-              clearUserData={clearUserData}
-            />
+          {userIsLogged &&
+            <CurrentUser />
           }
         </div>
       </div>
