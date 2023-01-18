@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import { useLoadingContext } from '../contexts/LoadingContext';
 import { IconContext } from "react-icons";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import CurrentUserMenu from './CurrentUserMenu';
 import LoadingIcon from "./LoadingIcon";
 import '../assets/styles/CurrentUser.css';
