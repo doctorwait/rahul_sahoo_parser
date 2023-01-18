@@ -28,39 +28,3 @@
   color: var(--color_text_main);
   font-size: 20px;
 }
-
-.search-form__button {
-  margin: 0 auto;
-  padding: 0;
-  border: 0;
-  width: 40%;
-  height: 50px;
-  color: var(--color_text_button);
-  font-family: var(--text_font);
-  font-size: 18px;
-  border-radius: 3px;
-  background-color: var(--color_accent);
-}
-
-.search-form__button:hover {
-  cursor: pointer;
-  background-color: var(--color_button_main_hover);
-}
-
-.search-form__button:disabled {
-  cursor: auto;
-}
-
-.search-form__button-icon {
-  margin-right: 5px;
-  color: var(--color_text_button);
-  width: 18px;
-  height: 18px;
-  vertical-align: text-top;
-}
-
-.search-form__loading-wrapper {
-  width: 18px;
-  height: 18px;
-  margin: 0 auto;
-}

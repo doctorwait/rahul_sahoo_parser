@@ -4,7 +4,7 @@ import { IoMdClose } from 'react-icons/io';
 import '../assets/styles/PopupWithForm.css';
 import PopupWrapper from './PopupWrapper';
 import Logo from './Logo';
-import LoadingIcon from './LoadignIcon';
+import MainButton from './MainButton';
 
 function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
   const { formDataLoading } = useLoadingContext();
@@ -23,20 +23,13 @@ function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
         <fieldset className="popup-form__fieldset">
           {children}
         </fieldset>
-        <button
-          className="popup-form__submit-button"
+        <MainButton
           type="submit"
           disabled={formDataLoading}
-        >
-          {
-            formDataLoading ?
-              <div className="popup-form__loading-wrapper">
-                <LoadingIcon />
-              </div>
-              :
-              buttonText
-          }
-        </button>
+          text={buttonText}
+          place="popup-form"
+          isLoading={formDataLoading}
+        />
         <button
           className="popup-form__close-button"
           type="reset"

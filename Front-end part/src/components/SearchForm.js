@@ -1,10 +1,9 @@
 import { useLoadingContext } from '../contexts/LoadingContext';
-import { IconContext } from "react-icons";
 import { AiOutlineSearch } from 'react-icons/ai';
 import useCollectInputsData from '../hooks/useCollectInputsData';
-import '../assets/styles/SearchForm.css';
 import FormInput from './FormInput';
-import LoadingIcon from "./LoadignIcon";
+import MainButton from './MainButton';
+import '../assets/styles/SearchForm.css';
 
 function SearchForm() {
   const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
@@ -51,24 +50,14 @@ function SearchForm() {
           place="main"
         />
       </fieldset>
-      <button
-        className="search-form__button"
+      <MainButton
         type="submit"
+        Icon={AiOutlineSearch}
         disabled={formDataLoading}
-      >
-        {formDataLoading ?
-          <div className="search-form__loading-wrapper" >
-            <LoadingIcon />
-          </div>
-          :
-          <>
-            <IconContext.Provider value={{ className: "search-form__button-icon" }}>
-              <AiOutlineSearch />
-            </IconContext.Provider>
-            Search
-          </>
-        }
-      </button>
+        text="Search"
+        place="search-form"
+        isLoading={formDataLoading}
+      />
     </form>
   );
 }

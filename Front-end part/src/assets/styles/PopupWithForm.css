@@ -24,27 +24,6 @@
   gap: 30px;
 }
 
-.popup-form__submit-button {
-  margin: 0;
-  padding: 15px 20px;
-  background-color: var(--color_accent);
-  border: 0;
-  color: var(--color_text_button);
-  font-size: 16px;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.popup-form__submit-button:hover {
-  cursor: pointer;
-  background-color: var(--color_button_main_hover);
-}
-
-.popup-form__submit-button:disabled:hover {
-  cursor: auto;
-  background-color: var(--color_accent);
-}
-
 .popup-form__close-button {
   margin: 0;
   padding: 0;
@@ -63,10 +42,4 @@
   color: var(--color_text_main);
   width: 25px;
   height: 25px;
-}
-
-.popup-form__loading-wrapper {
-  margin: 0 auto;
-  width: 18px;
-  height: 18px;
 }

@@ -3,9 +3,9 @@ import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import { useLoadingContext } from '../contexts/LoadingContext';
 import { IconContext } from "react-icons";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
-import '../assets/styles/CurrentUser.css';
 import CurrentUserMenu from './CurrentUserMenu';
-import LoadingIcon from "./LoadignIcon";
+import LoadingIcon from "./LoadingIcon";
+import '../assets/styles/CurrentUser.css';
 
 function CurrentUser({ handleLogout }) {
   const [menuIsOpen, setMenuState] = useState(false);
@@ -61,9 +61,14 @@ function CurrentUser({ handleLogout }) {
             </>
           }
         </div>
-        <button className="current-user__button" >
-          <IconContext.Provider value={{ className: 'current-user__button-icon' }}>
-            {menuIsOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        <button
+          className="current-user__button"
+          type='button'
+        >
+          <IconContext.Provider
+            value={{ className: `current-user__button-icon ${menuIsOpen && 'current-user__button-icon_active'}` }}
+          >
+            <MdKeyboardArrowDown />
           </IconContext.Provider>
         </button>
       </div>

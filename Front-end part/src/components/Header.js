@@ -1,10 +1,10 @@
 import { useCurrentUserContext } from "../contexts/CurrentUserContext";
-import { IconContext } from "react-icons";
 import { MdOutlineLogin, MdCreate } from 'react-icons/md';
-import '../assets/styles/Header.css';
 import Navigation from './Navigation';
 import Logo from './Logo';
 import CurrentUser from './CurrentUser';
+import MainButton from "./MainButton";
+import '../assets/styles/Header.css';
 
 function Header({ openLoginPopup, openRegisterPopup, handleLogout }) {
   const { userIsLogged } = useCurrentUserContext();
@@ -18,26 +18,20 @@ function Header({ openLoginPopup, openRegisterPopup, handleLogout }) {
           {!userIsLogged &&
             <ul className="header__buttons">
               <li>
-                <button
-                  className="header__button header__button_type_login"
-                  onClick={openLoginPopup}
-                >
-                  <IconContext.Provider value={{ className: 'header__button-icon' }}>
-                    <MdOutlineLogin />
-                  </IconContext.Provider>
-                  Sign in
-                </button>
+                <MainButton
+                  Icon={MdOutlineLogin}
+                  text="Sign in"
+                  place="header-login"
+                  handleClick={openLoginPopup}
+                />
               </li>
               <li>
-                <button
-                  className="header__button header__button_type_register"
-                  onClick={openRegisterPopup}
-                >
-                  <IconContext.Provider value={{ className: 'header__button-icon' }}>
-                    <MdCreate />
-                  </IconContext.Provider>
-                  Sign up
-                </button>
+                <MainButton
+                  Icon={MdCreate}
+                  text="Sign up"
+                  place="header-register"
+                  handleClick={openRegisterPopup}
+                />
               </li>
             </ul>
           }

@@ -86,3 +86,7 @@
   width: 18px;
   height: 18px;
 }
+
+.current-user__button-icon_active {
+  transform: rotate(180deg);
+}
