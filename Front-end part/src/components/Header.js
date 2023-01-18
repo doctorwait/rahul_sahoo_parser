@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 import Logo from './Logo';
 import CurrentUser from './CurrentUser';
 
-function Header({ openLoginPopup, openRegisterPopup }) {
+function Header({ openLoginPopup, openRegisterPopup, handleLogout }) {
   const { userIsLogged } = useCurrentUserContext();
 
   return (
@@ -42,7 +42,9 @@ function Header({ openLoginPopup, openRegisterPopup }) {
             </ul>
           }
           {userIsLogged &&
-            <CurrentUser />
+            <CurrentUser
+              handleLogout={handleLogout}
+            />
           }
         </div>
       </div>

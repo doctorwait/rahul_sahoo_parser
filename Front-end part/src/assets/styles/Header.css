@@ -62,15 +62,15 @@
 }
 
 .header__button_type_login:hover {
-  background-color: rgb(62, 95, 216);
+  background-color: var(--color_button_main_hover);
 }
 
 .header__button_type_register {
-  background-color: rgb(32, 151, 102);
+  background-color: var(--color_button_signup);
 }
 
 .header__button_type_register:hover {
-  background-color: #008D5B;
+  background-color: var(--color_button_signup_hover);
 }
 
 .header__button-icon {

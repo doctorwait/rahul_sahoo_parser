@@ -3,7 +3,7 @@
   padding: 0;
   width: 100%;
   position: absolute;
-  top: calc(100% + 22px);
+  top: calc(100% + 13px);
   right: 0;
   left: 0;
   box-sizing: border-box;
@@ -43,7 +43,7 @@
 
 .user-menu__button:hover {
   cursor: pointer;
-  background-color: rgb(0, 0, 0, .04);
+  background-color: rgb(0, 0, 0, .05);
 }
 
 .user-menu__button-icon {

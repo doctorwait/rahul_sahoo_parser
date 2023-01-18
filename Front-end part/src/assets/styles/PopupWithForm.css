@@ -37,6 +37,11 @@
 
 .popup-form__submit-button:hover {
   cursor: pointer;
+  background-color: var(--color_button_main_hover);
+}
+
+.popup-form__submit-button:disabled:hover {
+  cursor: auto;
   background-color: var(--color_accent);
 }
 
@@ -58,4 +63,10 @@
   color: var(--color_text_main);
   width: 25px;
   height: 25px;
+}
+
+.popup-form__loading-wrapper {
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
 }

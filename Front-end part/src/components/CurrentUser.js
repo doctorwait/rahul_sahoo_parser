@@ -1,17 +1,22 @@
 import { useState, useRef, useEffect } from 'react';
 import { useCurrentUserContext } from "../contexts/CurrentUserContext";
+import { useLoadingContext } from '../contexts/LoadingContext';
 import { IconContext } from "react-icons";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import '../assets/styles/CurrentUser.css';
 import CurrentUserMenu from './CurrentUserMenu';
+import LoadingIcon from "./LoadignIcon";
 
-function CurrentUser() {
+function CurrentUser({ handleLogout }) {
   const [menuIsOpen, setMenuState] = useState(false);
   const userMenuRef = useRef();
   const { currentUserData } = useCurrentUserContext();
+  const { userDataLoading } = useLoadingContext();
 
   function handleMenuToggle() {
-    setMenuState(current => !current);
+    if(!userDataLoading) {
+      setMenuState(current => !current);
+    }
   }
 
   function handleClickOutside(evt) {
@@ -22,7 +27,7 @@ function CurrentUser() {
   }
 
   useEffect(() => {
-    if(menuIsOpen) {
+    if (menuIsOpen) {
       window.addEventListener('click', handleClickOutside);
     }
 
@@ -40,16 +45,33 @@ function CurrentUser() {
         className="current-user__wrapper"
         onClick={handleMenuToggle}
       >
-        <h3 className="current-user__name">
-          {currentUserData.email}
-        </h3>
+        <div className="current-user__data-wrapper">
+          {userDataLoading ?
+            <div className="current-user__loading-wrapper" >
+              <LoadingIcon />
+            </div>
+            :
+            <>
+              <h3 className="current-user__name">
+                {`${currentUserData.firstName} ${currentUserData.lastName}`}
+              </h3>
+              <p className="current-user__email">
+                {currentUserData.email}
+              </p>
+            </>
+          }
+        </div>
         <button className="current-user__button" >
           <IconContext.Provider value={{ className: 'current-user__button-icon' }}>
             {menuIsOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
           </IconContext.Provider>
         </button>
       </div>
-      { menuIsOpen && <CurrentUserMenu /> }
+      {menuIsOpen &&
+        <CurrentUserMenu
+          handleLogout={handleLogout}
+        />
+      }
     </div>
   );
 }

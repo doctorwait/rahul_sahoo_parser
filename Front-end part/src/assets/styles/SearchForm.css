@@ -44,7 +44,11 @@
 
 .search-form__button:hover {
   cursor: pointer;
-  background-color: rgb(62, 95, 216);
+  background-color: var(--color_button_main_hover);
+}
+
+.search-form__button:disabled {
+  cursor: auto;
 }
 
 .search-form__button-icon {
@@ -53,4 +57,10 @@
   width: 18px;
   height: 18px;
   vertical-align: text-top;
+}
+
+.search-form__loading-wrapper {
+  width: 18px;
+  height: 18px;
+  margin: 0 auto;
 }

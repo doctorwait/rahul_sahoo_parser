@@ -1,10 +1,14 @@
-import { IconContext } from "react-icons";
+import { useLoadingContext } from '../contexts/LoadingContext';
+import { IconContext } from 'react-icons';
 import { IoMdClose } from 'react-icons/io';
 import '../assets/styles/PopupWithForm.css';
 import PopupWrapper from './PopupWrapper';
 import Logo from './Logo';
+import LoadingIcon from './LoadignIcon';
 
 function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
+  const { formDataLoading } = useLoadingContext();
+
   return (
     <PopupWrapper
       handleClose={handleClose}
@@ -22,8 +26,16 @@ function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
         <button
           className="popup-form__submit-button"
           type="submit"
+          disabled={formDataLoading}
         >
-          {buttonText}
+          {
+            formDataLoading ?
+              <div className="popup-form__loading-wrapper">
+                <LoadingIcon />
+              </div>
+              :
+              buttonText
+          }
         </button>
         <button
           className="popup-form__close-button"

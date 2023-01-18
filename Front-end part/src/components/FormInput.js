@@ -5,7 +5,7 @@ function FormInput({ value, handleChange, label = false, id, type, name, placeho
     <div className="form-input" >
       {label &&
         <label
-          htmlFor="keyword-input"
+          htmlFor={id}
           className={`form-input__label ${place && "form-input__label_place_" + place}`}
         >
           {label}

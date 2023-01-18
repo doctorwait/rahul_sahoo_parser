@@ -3,23 +3,48 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.current-user__loading-wrapper {
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
 }
 
 .current-user__wrapper {
   margin: 0;
   padding: 0;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 10px;
+  border-left: 1.5px solid rgb(255, 255, 255, .2);
 }
 
 .current-user__wrapper:hover {
   cursor: pointer;
 }
 
-.current-user__wrapper:hover > .current-user__name {
+.current-user__wrapper:hover > .current-user__data-wrapper > .current-user__name {
   opacity: .8;
+}
+
+.current-user__wrapper:hover > .current-user__data-wrapper > .current-user__email {
+  opacity: .5;
+}
+
+.current-user__data-wrapper {
+  margin: 0;
+  padding: 0;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .current-user__name {
@@ -27,8 +52,20 @@
   padding: 0;
   color: var(--color_text_button);
   font-family: var(--text_font);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  text-align: center;
+}
+
+.current-user__email {
+  margin: 0;
+  padding: 0;
+  color: var(--color_text_button);
+  font-family: var(--text_font);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: .7;
+  text-align: center;
 }
 
 .current-user__button {

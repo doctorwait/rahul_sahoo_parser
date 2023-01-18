@@ -2,14 +2,12 @@ import useCollectInputsData from '../hooks/useCollectInputsData';
 import PopupWithForm from './PopupWithForm';
 import FormInput from './FormInput';
 
-function RegisterPopup({ handleClose }) {
-  const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
+function RegisterPopup({ handleClose, handleRegister }) {
+  const { inputsValues, handleChange } = useCollectInputsData();
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log(inputsValues);
-    handleClose();
-    clearInputsValues();
+    handleRegister(inputsValues);
   }
 
   return (

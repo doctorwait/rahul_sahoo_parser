@@ -1,19 +1,16 @@
+import { useState } from 'react';
 import useCollectInputsData from '../hooks/useCollectInputsData';
-import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import PopupWithForm from './PopupWithForm';
 import FormInput from './FormInput';
+import FormCheckbox from './FormCheckbox';
 
-function LoginPopup({ handleClose }) {
-  const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
-  const { setCurrentUser } = useCurrentUserContext();
+function LoginPopup({ handleClose, handleLogin }) {
+  const [ keepSignIn, setKeepSignIn ] = useState(false);
+  const { inputsValues, handleChange } = useCollectInputsData();
 
   function handleSubmit(evt) {
     evt.preventDefault();
-
-    setCurrentUser(inputsValues);
-
-    handleClose();
-    clearInputsValues();
+    handleLogin(inputsValues, keepSignIn);
   }
 
   return (
@@ -41,6 +38,14 @@ function LoginPopup({ handleClose }) {
         value={inputsValues.password}
         handleChange={handleChange}
         place="popup"
+      />
+      <FormCheckbox
+        id="keep-sign-in"
+        name="keepSignIn"
+        label="Keep me signed in"
+        place="popup"
+        checked={keepSignIn}
+        handleChange={() => setKeepSignIn(current => !current)}
       />
     </PopupWithForm>
   );

@@ -16,15 +16,26 @@ export function CurrentUserProvider({ children }) {
     setUserStatus(false)
   }
 
+  function setLoginState(state) {
+    setUserStatus(state);
+  }
+
   return (
-    <CurrentUserContext.Provider value={{ userIsLogged, currentUserData, setCurrentUser, removeCurrentUser }}>
+    <CurrentUserContext.Provider
+      value={{
+        userIsLogged,
+        currentUserData,
+        setLoginState,
+        setCurrentUser,
+        removeCurrentUser
+      }}
+    >
       {children}
     </CurrentUserContext.Provider>
   );
 }
 
 export function useCurrentUserContext() {
-  const { userIsLogged, currentUserData, setCurrentUser, removeCurrentUser } = useContext(CurrentUserContext);
-
-  return { userIsLogged, currentUserData, setCurrentUser, removeCurrentUser };
+  const contextValue = useContext(CurrentUserContext);
+  return { ...contextValue };
 }
