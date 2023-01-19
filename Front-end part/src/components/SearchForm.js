@@ -1,6 +1,7 @@
 import { useLoadingContext } from '../contexts/LoadingContext';
 import { AiOutlineSearch } from 'react-icons/ai';
 import useCollectInputsData from '../hooks/useCollectInputsData';
+import useFileDownload from '../hooks/useFileDownload';
 import FormInput from './FormInput';
 import MainButton from './MainButton';
 import '../assets/styles/SearchForm.css';
@@ -8,10 +9,13 @@ import '../assets/styles/SearchForm.css';
 function SearchForm() {
   const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
   const { formDataLoading, setFormDataLoading } = useLoadingContext();
+  const { mockDownloadFile } = useFileDownload(); // dummy function, use useFileDownload function from this hook when API will be ready;
 
-  function loader() {
+
+  function handleDataLoad() {
     setFormDataLoading(true);
     setTimeout(() => {
+      mockDownloadFile(inputsValues); // dummy function, use useFileDownload function from same custom hook when API will be ready;
       setFormDataLoading(false);
       clearInputsValues();
     }, 1000);
@@ -19,7 +23,7 @@ function SearchForm() {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    loader();
+    handleDataLoad();
   }
 
   return (

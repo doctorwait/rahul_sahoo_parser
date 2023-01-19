@@ -1,8 +1,5 @@
 import { REGISTER_FETCH_URL, LOGIN_FETCH_URL, TOKEN_FETCH_URL } from "./constants";
-
-function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(res.status);
-}
+import { checkResponse } from "./utils";
 
 export const register = ({ name, password, email }) => {
 
@@ -19,7 +16,7 @@ export const register = ({ name, password, email }) => {
       name
     })
   })
-    .then(response => checkResponse(response));
+    .then(checkResponse);
 }
 
 export const login = ({ password, email }) => {
@@ -36,7 +33,7 @@ export const login = ({ password, email }) => {
       password: '0lelplR',  // Mock data. Change to data from function arguments when back-end will be ready.
     })
   })
-    .then(response => checkResponse(response));
+    .then(checkResponse);
 }
 
 export const checkToken = (token) => {
@@ -50,5 +47,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json"
     },
   })
-    .then(response => checkResponse(response));
+    .then(checkResponse);
 }

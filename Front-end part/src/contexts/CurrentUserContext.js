@@ -2,6 +2,8 @@ import { createContext, useState, useContext } from "react";
 
 const CurrentUserContext = createContext();
 
+// wrap components that need access to context at this provider component
+
 export function CurrentUserProvider({ children }) {
   const [currentUserData, setCurrentUserData] = useState({});
   const [userIsLogged, setUserStatus] = useState(false);
@@ -34,6 +36,8 @@ export function CurrentUserProvider({ children }) {
     </CurrentUserContext.Provider>
   );
 }
+
+// custom hook to access context value inside component
 
 export function useCurrentUserContext() {
   const contextValue = useContext(CurrentUserContext);
