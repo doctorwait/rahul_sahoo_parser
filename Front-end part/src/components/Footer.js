@@ -1,7 +1,7 @@
 import { IconContext } from 'react-icons';
 import { MdFacebook } from 'react-icons/md';
 import { FaLink } from 'react-icons/fa';
-import { IoLogoTwitter, IoLogoLinkedin, IoIosLink } from 'react-icons/io';
+import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 import '../assets/styles/Footer.css';
 
 function Footer() {

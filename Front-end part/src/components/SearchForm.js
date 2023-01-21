@@ -1,16 +1,17 @@
 import { useLoadingContext } from '../contexts/LoadingContext';
 import { AiOutlineSearch } from 'react-icons/ai';
 import useCollectInputsData from '../hooks/useCollectInputsData';
+import useFormValidation from '../hooks/useFormValidation';
 import useFileDownload from '../hooks/useFileDownload';
 import FormInput from './FormInput';
 import MainButton from './MainButton';
 import '../assets/styles/SearchForm.css';
 
 function SearchForm() {
-  const { inputsValues, handleChange, clearInputsValues } = useCollectInputsData();
+  const { inputsValues, handleCollectData, clearInputsValues } = useCollectInputsData();
   const { formDataLoading, setFormDataLoading } = useLoadingContext();
+  const { isValid, handleValidityCheck } = useFormValidation();
   const { mockDownloadFile } = useFileDownload(); // dummy function, use useFileDownload function from this hook when API will be ready;
-
 
   function handleDataLoad() {
     setFormDataLoading(true);
@@ -23,13 +24,18 @@ function SearchForm() {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleDataLoad();
+
+    if(isValid) {
+      handleDataLoad();
+    }
   }
 
   return (
     <form
       onSubmit={handleSubmit}
+      onChange={handleValidityCheck}
       className="search-form"
+      noValidate
     >
       <h2 className="search-form__title">
         Built your Custom List
@@ -41,8 +47,9 @@ function SearchForm() {
           name="keyword"
           placeholder="Enter a keyword"
           value={inputsValues.keyword}
-          handleChange={handleChange}
+          handleChange={handleCollectData}
           place="main"
+          validation={false}
         />
         <FormInput
           id="city-input"
@@ -50,8 +57,9 @@ function SearchForm() {
           name="city"
           placeholder="Enter a city"
           value={inputsValues.city}
-          handleChange={handleChange}
+          handleChange={handleCollectData}
           place="main"
+          validation={false}
         />
       </fieldset>
       <MainButton
@@ -60,6 +68,7 @@ function SearchForm() {
         disabled={formDataLoading}
         text="Search"
         place="search-form"
+        classType={formDataLoading && "form-loading"}
         isLoading={formDataLoading}
       />
     </form>

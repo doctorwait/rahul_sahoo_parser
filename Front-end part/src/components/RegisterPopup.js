@@ -3,7 +3,7 @@ import PopupWithForm from './PopupWithForm';
 import FormInput from './FormInput';
 
 function RegisterPopup({ handleClose, handleRegister }) {
-  const { inputsValues, handleChange } = useCollectInputsData();
+  const { inputsValues, handleCollectData } = useCollectInputsData();
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -23,8 +23,10 @@ function RegisterPopup({ handleClose, handleRegister }) {
         placeholder="Your name"
         label="Your name"
         value={inputsValues.name}
-        handleChange={handleChange}
+        handleChange={handleCollectData}
         place="popup"
+        minLength="2"
+        maxLength="32"
       />
       <FormInput
         id="email-input"
@@ -33,7 +35,7 @@ function RegisterPopup({ handleClose, handleRegister }) {
         placeholder="user@example.com"
         label="Email Address"
         value={inputsValues.email}
-        handleChange={handleChange}
+        handleChange={handleCollectData}
         place="popup"
       />
       <FormInput
@@ -43,8 +45,10 @@ function RegisterPopup({ handleClose, handleRegister }) {
         placeholder="Password"
         label="Password"
         value={inputsValues.password}
-        handleChange={handleChange}
+        handleChange={handleCollectData}
         place="popup"
+        minLength="4"
+        maxLength="16"
       />
     </PopupWithForm>
   );

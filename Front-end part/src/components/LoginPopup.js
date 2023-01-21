@@ -6,7 +6,7 @@ import FormCheckbox from './FormCheckbox';
 
 function LoginPopup({ handleClose, handleLogin }) {
   const [ keepSignIn, setKeepSignIn ] = useState(false);
-  const { inputsValues, handleChange } = useCollectInputsData();
+  const { inputsValues, handleCollectData } = useCollectInputsData();
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -26,7 +26,7 @@ function LoginPopup({ handleClose, handleLogin }) {
         placeholder="user@example.com"
         label="Email Address"
         value={inputsValues.email}
-        handleChange={handleChange}
+        handleChange={handleCollectData}
         place="popup"
       />
       <FormInput
@@ -36,8 +36,10 @@ function LoginPopup({ handleClose, handleLogin }) {
         placeholder="Password"
         label="Password"
         value={inputsValues.password}
-        handleChange={handleChange}
+        handleChange={handleCollectData}
         place="popup"
+        minLength="4"
+        maxLength="16"
       />
       <FormCheckbox
         id="keep-sign-in"

@@ -3,7 +3,7 @@ import { useState } from 'react';
 function useCollectInputsData() {
   const [inputsValues, setInputsValues] = useState({});
 
-  function handleChange(evt) {
+  function handleCollectData(evt) {
     const { name, value } = evt.target;
 
     setInputsValues(current => ({
@@ -16,7 +16,7 @@ function useCollectInputsData() {
     setInputsValues({})
   }
 
-  return { inputsValues, handleChange, clearInputsValues }
+  return { inputsValues, handleCollectData, clearInputsValues }
 }
 
 export default useCollectInputsData;

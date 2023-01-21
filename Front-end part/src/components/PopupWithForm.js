@@ -1,13 +1,15 @@
 import { useLoadingContext } from '../contexts/LoadingContext';
 import { IconContext } from 'react-icons';
 import { IoMdClose } from 'react-icons/io';
-import '../assets/styles/PopupWithForm.css';
+import useFormValidation from '../hooks/useFormValidation';
 import PopupWrapper from './PopupWrapper';
 import Logo from './Logo';
 import MainButton from './MainButton';
+import '../assets/styles/PopupWithForm.css';
 
 function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
   const { formDataLoading } = useLoadingContext();
+  const { isValid, handleValidityCheck } = useFormValidation();
 
   return (
     <PopupWrapper
@@ -15,7 +17,9 @@ function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
     >
       <form
         onSubmit={handleSubmit}
+        onChange={handleValidityCheck}
         className="popup-form"
+        noValidate
       >
         <Logo
           black={true}
@@ -25,9 +29,10 @@ function PopupWithForm({ handleClose, handleSubmit, buttonText, children }) {
         </fieldset>
         <MainButton
           type="submit"
-          disabled={formDataLoading}
+          disabled={formDataLoading || !isValid}
           text={buttonText}
           place="popup-form"
+          classType={formDataLoading && "form-loading"}
           isLoading={formDataLoading}
         />
         <button

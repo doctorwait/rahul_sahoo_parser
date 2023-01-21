@@ -44,6 +44,14 @@
   width: 100%;
 }
 
+.main-button_place_popup-form:disabled {
+  background-color: var(--color_button_disabled);
+}
+
+.main-button_place_popup-form:disabled:hover {
+  background-color: var(--color_button_disabled);
+}
+
 .main-button_place_header-login {
   padding: 0 15px;
   height: 40px;
@@ -76,4 +84,12 @@
 .main-button_place_header-register > .main-button__icon {
   width: 16px;
   height: 16px;
+}
+
+.main-button_type_form-loading:disabled {
+  background-color: var(--color_accent);
+}
+
+.main-button_type_form-loading:disabled:hover {
+  background-color: var(--color_accent);
 }

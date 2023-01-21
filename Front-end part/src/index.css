@@ -41,6 +41,11 @@ body {
   --color_button_main_hover: #4752AC;
   --color_button_signup: #209765;
   --color_button_signup_hover: #008D5B;
+  --color_button_disabled: #ABA9BB;
+
+  /* service colors */
+  --color_error: #B43942;
+  --color_success: #209765;
 
   /* text props */
   --text_font: 'Roboto', sans-serif;
